@@ -1,4 +1,5 @@
 'use strict'
+require('dotenv').config();
 /**
  * New Relic agent configuration.
  *
@@ -9,11 +10,11 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['My Application'],
+  app_name: ['spencer-proxy'],
   /**
    * Your New Relic license key.
    */
-  license_key: 'license key here',
+  license_key: process.env.newRelicKey,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
