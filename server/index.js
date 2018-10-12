@@ -8,8 +8,10 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const router = require('./routes.js');
 
-app.use('/loaderio-0366811c6f31a5054a5438605765f838.txt', (req, res) => {
-  res.sendFile(path.join(__dirname, 'loaderio-0366811c6f31a5054a5438605765f838.txt'), (err) => {
+require('dotenv').config();
+
+app.use(`/${process.env.load}.txt`, (req, res) => {
+  res.sendFile(path.join(__dirname, `${process.env.load}.txt`), (err) => {
     if (err) {              
       throw(err);
     }else {
